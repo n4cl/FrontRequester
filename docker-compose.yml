@@ -6,3 +6,10 @@ services:
             context: ./front_server
         ports:
             - 80:80
+    back_app:
+        build:
+            context: ./back_server
+        volumes:
+            - ./back_server/app:/app
+        ports:
+            - 8000:8000
