@@ -13,7 +13,12 @@ logger.propagate = False
 
 app = Flask(__name__)
 
-@app.route('/')
-def hello():
-    logger.debug('hello')
-    return jsonify({"response": "hello world"}), 200
+@app.route('/get')
+def get():
+    logger.debug('get')
+    return jsonify({"response": "get"}), 200
+
+@app.route('/post', methods=["POST"])
+def post():
+    logger.debug('post')
+    return jsonify({"response": "post"}), 200
